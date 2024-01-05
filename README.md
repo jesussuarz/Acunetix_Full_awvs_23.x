@@ -9,8 +9,8 @@ If you're looking to use Acunetix on your Windows machine, this repository provi
 The following repositories are quite useful: 
 
 ```
+https://github.com/XRSec/AWVS-Update
 https://github.com/k4t3pr0/acunetix_v23.6/
-https://github.com/XRSec/AWVS-Update 
 ```
 
 ## Prerequisites
