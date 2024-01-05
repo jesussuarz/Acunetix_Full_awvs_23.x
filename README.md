@@ -31,6 +31,9 @@ Access the Docker image with the following command:
 
 ```bash
 docker exec -it awvs /bin/bash
+apt update -y
+apt upgrade -y
+apt install libsqlite3-dev -y
 ```
 
 ### Step 3: Download the Activation Script
