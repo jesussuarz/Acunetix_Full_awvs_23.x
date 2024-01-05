@@ -59,6 +59,22 @@ Finally, run the script to activate the full version of Acunetix:
 ```bash
 ./check-tools.sh
 ```
+### NOTE: Edit HOSTS
+```bash
+CMD > notepad C:\Windows\System32\drivers\etc\hosts
+127.0.0.1 awvs.lan
+```
+### RootCA 「must」
+
+Downlaod && Install [`RootCA.cer`](https://cdn.jsdelivr.net/gh/XRSec/AWVS-Update@main/.github/resources/ca.cer)
+
+### Visit Web
+
+```ini
+URL: https://awvs.lan:3443/#/login
+UserName: awvs@awvs.lan
+PassWord: Awvs@awvs.lan
+```
 
 ## Usage
 
