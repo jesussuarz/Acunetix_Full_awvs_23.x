@@ -66,7 +66,7 @@ Finally, run the script to activate the full version of Acunetix:
 ```bash
 ./check-tools.sh
 ```
-### NOTE: Edit HOSTS
+### NOTE: Edit the HOSTS file of your Windows machine
 ```bash
 CMD > notepad C:\Windows\System32\drivers\etc\hosts
 127.0.0.1 awvs.lan
