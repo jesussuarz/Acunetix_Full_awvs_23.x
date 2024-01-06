@@ -15,24 +15,29 @@ https://github.com/k4t3pr0/acunetix_v23.6/
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/) must be installed on your Windows machine.
-
+- [Docker](https://docs.docker.com/desktop/install/windows-install/) must be installed on your Windows machine. (Docker Desktop)
+- [Linux WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) 
+ 
 ## Installation
 
 ### Step 1: Pull the Docker Image
 
 Start by pulling the Docker image that contains the Acunetix files:
 
-```bash
-docker pull xrsec/awvs
+```cmd
+CMD > docker pull xrsec/awvs
 ```
 
 ### Step 2: Access the Docker Image
 
 Access the Docker image with the following command:
 
+```cmd
+CMD > docker exec -it awvs /bin/bash
+```
+Then, from the bash of your docker image run:
+
 ```bash
-docker exec -it awvs /bin/bash
 apt update -y
 apt upgrade -y
 apt install libsqlite3-dev -y
@@ -43,7 +48,7 @@ apt install libsqlite3-dev -y
 Inside the Docker image, download the script necessary to activate your Acunetix version:
 
 ```bash
-wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
+Bash# wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
 ```
 
 ### Step 4: Provide Execution Permissions
@@ -51,7 +56,7 @@ wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
 Grant execution permissions to the downloaded script:
 
 ```bash
-chmod +x /check-tools.sh
+Bash# chmod +x /check-tools.sh
 ```
 
 ### Step 5: Activate Acunetix
