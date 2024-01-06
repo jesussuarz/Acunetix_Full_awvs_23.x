@@ -48,7 +48,7 @@ apt install libsqlite3-dev -y
 Inside the Docker image, download the script necessary to activate your Acunetix version:
 
 ```bash
-Bash# wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
+wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
 ```
 
 ### Step 4: Provide Execution Permissions
@@ -56,7 +56,7 @@ Bash# wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificat
 Grant execution permissions to the downloaded script:
 
 ```bash
-Bash# chmod +x /check-tools.sh
+chmod +x /check-tools.sh
 ```
 
 ### Step 5: Activate Acunetix
