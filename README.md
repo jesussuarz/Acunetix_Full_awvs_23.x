@@ -74,6 +74,7 @@ CMD > notepad C:\Windows\System32\drivers\etc\hosts
 ### RootCA 「must」
 
 Downlaod && Install [`RootCA.cer`](https://cdn.jsdelivr.net/gh/XRSec/AWVS-Update@main/.github/resources/ca.cer)
+(this is installed in the browser of your Windows machine, for example in the root store of your Google Chrome or your Firefox)
 
 ### Visit Web
 
