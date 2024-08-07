@@ -10,26 +10,28 @@ The following repositories are quite useful:
 
 ```
 https://github.com/XRSec/AWVS-Update
-https://github.com/k4t3pr0/acunetix_v23.6/
+https://github.com/ngductung/acunetix23
 ```
 
 ## Prerequisites
-
 - [Docker](https://docs.docker.com/desktop/install/windows-install/) must be installed on your Windows machine. (Docker Desktop)
 - [Linux WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) 
  
 ## Installation
 
 ### Step 1: Pull the Docker Image
-
 Start by pulling the Docker image that contains the Acunetix files:
 
 ```cmd
-CMD > docker pull xrsec/awvs
+CMD > docker pull xrsec/awvs:23.9.231020153
 ```
 
-### Step 2: Access the Docker Image
-
+### Step 2: Start the Docker Imagen 
+Start Imagen Docker
+```cmd
+CMD > docker run -itd --name awvs --cap-add LINUX_IMMUTABLE -p "3443:3443" "xrsec/awvs:23.9.231020153"
+```
+### Step 3: Access the Docker Image
 Access the Docker image with the following command:
 
 ```cmd
@@ -41,6 +43,7 @@ Then, from the bash of your docker image run:
 apt update -y
 apt upgrade -y
 apt install libsqlite3-dev -y
+apt install wget
 ```
 
 ### Step 3: Download the Activation Script
@@ -48,7 +51,7 @@ apt install libsqlite3-dev -y
 Inside the Docker image, download the script necessary to activate your Acunetix version:
 
 ```bash
-wget https://www.fahai.org/aDisk/Awvs/check-tools.sh --no-check-certificate
+wget https://raw.githubusercontent.com/ngductung/acunetix23/main/check-tools.sh --no-check-certificate
 ```
 
 ### Step 4: Provide Execution Permissions
@@ -60,7 +63,6 @@ chmod +x /check-tools.sh
 ```
 
 ### Step 5: Activate Acunetix
-
 Finally, run the script to activate the full version of Acunetix:
 
 ```bash
@@ -72,7 +74,6 @@ CMD > notepad C:\Windows\System32\drivers\etc\hosts
 127.0.0.1 awvs.lan
 ```
 ### RootCA 「must」
-
 Downlaod && Install [`RootCA.cer`](https://cdn.jsdelivr.net/gh/XRSec/AWVS-Update@main/.github/resources/ca.cer)
 (this is installed in the browser of your Windows machine, for example in the root store of your Google Chrome or your Firefox)
 
@@ -86,7 +87,6 @@ PassWord: Awvs@awvs.lan
 ![Acunetix Full](https://github.com/jesussuarz/Acunetix_Full_awvs_23.x/blob/e9372c4d62548f275f06ce8c8c653f13180702dc/Acunetix_full.png)
 
 ## Usage
-
 Once you've completed the installation, you should have a fully functional Acunetix setup on your Windows machine. Please note that any changes made within the Docker container may be lost if you decide to shut it down. In such cases, simply follow the installation steps again to reactivate Acunetix.
 
 ## Contribution
