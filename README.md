@@ -25,12 +25,19 @@ Start by pulling the Docker image that contains the Acunetix files:
 ```cmd
 CMD > docker pull xrsec/awvs:23.9.231020153
 ```
+### Acunetix 24
+If you want to use version 24, you can use the following Docker image:
 
+```cmd
+CMD > docker pull xrsec/awvs:24.4.240427095
+```
 ### Step 2: Start the Docker Imagen 
 Start Imagen Docker
 ```cmd
 CMD > docker run -itd --name awvs --cap-add LINUX_IMMUTABLE -p "3443:3443" "xrsec/awvs:23.9.231020153"
 ```
+If you are using Acunetix 24, update the image name in the command.
+
 ### Step 3: Access the Docker Image
 Access the Docker image with the following command:
 
@@ -46,7 +53,7 @@ apt install libsqlite3-dev -y
 apt install wget
 ```
 
-### Step 3: Download the Activation Script
+### Step 4: Download the Activation Script
 
 Inside the Docker image, download the script necessary to activate your Acunetix version:
 
@@ -54,7 +61,7 @@ Inside the Docker image, download the script necessary to activate your Acunetix
 wget https://raw.githubusercontent.com/ngductung/acunetix23/main/check-tools.sh --no-check-certificate
 ```
 
-### Step 4: Provide Execution Permissions
+### Step 5: Provide Execution Permissions
 
 Grant execution permissions to the downloaded script:
 
@@ -62,12 +69,13 @@ Grant execution permissions to the downloaded script:
 chmod +x /check-tools.sh
 ```
 
-### Step 5: Activate Acunetix
+### Step 6: Activate Acunetix
 Finally, run the script to activate the full version of Acunetix:
 
 ```bash
 ./check-tools.sh
 ```
+
 ### NOTE: Edit the HOSTS file of your Windows machine
 ```bash
 CMD > notepad C:\Windows\System32\drivers\etc\hosts
@@ -90,6 +98,4 @@ PassWord: Awvs@awvs.lan
 Once you've completed the installation, you should have a fully functional Acunetix setup on your Windows machine. Please note that any changes made within the Docker container may be lost if you decide to shut it down. In such cases, simply follow the installation steps again to reactivate Acunetix.
 
 ## Contribution
-
 Feel free to contribute to this repository by opening issues or creating pull requests. Your contributions are highly appreciated.
-
